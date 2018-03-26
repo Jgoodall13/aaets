@@ -1,0 +1,69 @@
+<style>
+    #header{
+        background-color: #F5F5DC;
+    }
+    #title{
+        color: #295f8e;
+    }
+    .aa-header{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .head-right{
+        display: flex;
+        margin-top: 30px;
+    }
+    .go-home{
+        display: flex;
+    }
+    .input-group{
+        width: 300px;
+    }
+    .eagle{
+        height: 50px;
+        margin-top: 20px;
+    }
+    .tag-line{
+        margin: 0;
+        color: #337ab7;
+    }
+    .cart-info{
+        padding-left: 10px;
+    }
+    .fa-shopping-cart:before{
+        color: #337ab7;
+        font-size: 2em;
+    }
+</style>
+
+<div id="header">
+    <div class="container aa-header">
+        <div class="row">
+            <div class="col-md-7 col-md-offset-1">
+                <a href="/"><div class="go-home">
+                    <h1 id="title">American Airlines</h1>
+                    <img src="/assets/img/aaets/aa_bird.png" alt="eagle" class="eagle">
+                </div></a>
+                <h4 class="tag-line">Enterprise Technology Services</h4>
+            </div>
+            <div class="col-md-4 head-right">
+                <form id="search_form" action="/lsearch.jhtm" method="post">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="keywords" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <div class="cart-info">
+                    <a href="/viewCart.jhtm">
+                    <span class="cart_info">Cart (#cartItems#)</span>
+                    <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
