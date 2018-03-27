@@ -24,11 +24,38 @@
         padding-top: 50px;
         padding-left: 70px;
     }
+    #aa-copy-small{
+        margin: 0;
+        display: none;
+    }
+    @media (max-width: 992px){
+        .hero-img{
+            height: 300px;
+            background-size: 100% 100%;
+        }
+        #aa-copy{
+            margin: 0;
+            padding: 0;
+        }
+    }
+    @media (max-width: 767px){
+        .hero-img{
+            height: 200px;
+            background-size: 100% 100%;
+        }
+        #aa-copy{
+            display: none;
+        }
+        #aa-copy-small{
+            display: block;
+        }
+    }
 </style>
 <div class="body-body">
     <div class="hero-img">
         <!--make this your background image and scale accordingly -->
         <h1 id="aa-copy">YOUR ONE <br />STOP DESTINATION<br /> FOR FIRST CLASS STYLE</h1>
+        <h4 id="aa-copy-small">YOUR ONE STOP DESTINATION FOR FIRST CLASS STYLE</h4>
     </div>
     <div class="container">
         <div class="row">
@@ -47,3 +74,4 @@
         </div>
     </div>
 </div>
+
