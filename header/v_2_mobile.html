@@ -1,0 +1,194 @@
+<style>
+    #header{
+        background-color: #F5F5DC;
+    }
+    #title{
+        color: #295f8e;
+    }
+    .aa-header{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .head-right{
+        display: flex;
+        margin-top: 30px;
+    }
+    .go-home{
+        display: flex;
+    }
+    .input-group{
+        width: 300px;
+    }
+    .eagle{
+        height: 50px;
+        margin-top: 20px;
+    }
+    .tag-line{
+        margin: 0;
+        color: #337ab7;
+    }
+    .cart-info{
+        padding-left: 10px;
+    }
+    .fa-shopping-cart:before{
+        color: #337ab7;
+        font-size: 2em;
+    }
+    @media(max-width: 992px){
+        .top-navbar, .head-right, .go-home{
+            justify-content: center;
+        }
+        .aa-header{
+            text-align: center;
+        }
+    }
+
+    /*Mobile stuff*/
+    .mobile-head{
+        display:none;
+    }
+    #nav-icon3{
+        width: 60px;
+        height: 45px;
+        position: relative;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    #nav-icon3 span{
+        display: block;
+        position: absolute;
+        height: 9px;
+        width: 100%;
+        background: #b30000;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+     #nav-icon3 span:nth-child(1) {
+        top: 0px;
+    }
+    #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+        top: 18px;
+    }
+    #nav-icon3 span:nth-child(4) {
+        top: 36px;
+    }
+    #nav-icon3.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+    #nav-icon3.open span:nth-child(2) {
+      transform: rotate(45deg);
+    }
+    #nav-icon3.open span:nth-child(3) {
+     transform: rotate(-45deg);
+    }
+    #nav-icon3.open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+    @media(max-width: 486px){
+        #header{
+            display: none;
+        }
+        .mobile-head{
+            display: block;
+            background-color: #F5F5DC;
+        }
+        .go-home{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .tag-line{
+            margin: 0;
+            color: #337ab7;
+            padding-bottom: 10px;
+            text-align: center;
+         }
+         .eagle{
+            height: 20px;
+            margin-top: 8px;
+        }
+        h4#title{
+        font-size: 14px;
+        }
+        .cart-right{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }   
+    }
+</style>
+
+<div id="header">
+    <div class="container aa-header">
+        <div class="row">
+            <div class="col-md-7 col-md-offset-1">
+                <a href="/"><div class="go-home">
+                    <h1 id="title">American Airlines</h1>
+                    <img src="/assets/img/aaets/aa_bird.png" alt="eagle" class="eagle">
+                </div></a>
+                <h4 class="tag-line">Enterprise Technology Services</h4>
+            </div>
+            <div class="col-md-4 head-right">
+                <form id="search_form" action="/lsearch.jhtm" method="post">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="keywords" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <div class="cart-info">
+                    <a href="/viewCart.jhtm">
+                    <span class="cart_info">Cart (#cartItems#)</span>
+                    <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- THIS IS JUST MOBILE STUFF -->
+<div class="mobile-head">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <div id="nav-icon3">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <a href="/"><div class="go-home">
+                    <h4 id="title">American Airlines</h4>
+                    <img src="/assets/img/aaets/aa_bird.png" alt="eagle" class="eagle">
+                </div></a>
+            </div>
+            <div class="col-xs-3 cart-right">
+                <a href="/viewCart.jhtm">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+        </div>
+        <h6 class="tag-line">Enterprise Technology Services</h6>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+	$('#nav-icon3').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+</script>
