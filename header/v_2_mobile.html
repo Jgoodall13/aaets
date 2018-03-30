@@ -187,10 +187,20 @@
 
 <script>
     $(document).ready(function(){
-	$('#nav-icon3').click(function(){
-		$(this).toggleClass('open');
-	});
-});
+	    $('#nav-icon3').click(function(){
+		    $(this).toggleClass('open');
+	    });
+    });
+    //This wil be the hamburger function
+    $(document).ready(function(){
+	$('.top-navbar').slideDown('slow');
+	$('.nav-links').css({
+		'display': 'flex',
+		'justify-content': 'center',
+		'padding': 0	
+	})
+	$('#whole-nav').css('background-color', '#b30000')
+  });
 </script>
 
 
