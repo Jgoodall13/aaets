@@ -62,7 +62,7 @@
         position: absolute;
         height: 9px;
         width: 100%;
-        background: #b30000;
+        background: #337ab7;
         border-radius: 9px;
         opacity: 1;
         left: 0;
@@ -123,6 +123,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-top: 5px;
         }   
     }
 </style>
@@ -192,15 +193,17 @@
 	    });
     });
     //This wil be the hamburger function
-    $(document).ready(function(){
-	$('.top-navbar').slideDown('slow');
-	$('.nav-links').css({
-		'display': 'flex',
-		'justify-content': 'center',
-		'padding': 0	
-	})
-	$('#whole-nav').css('background-color', '#b30000')
-  });
+        $(document).ready(function(){
+        $('#nav-icon3').click(function(){
+                $('.top-navbar').slideToggle('slow');
+                $('.nav-links').css({
+                    'display': 'flex',
+                    'justify-content': 'center',
+                    'padding': 0	
+                })
+                $('#whole-nav').css('background-color', '#b30000')
+        })
+    })
 </script>
 
 

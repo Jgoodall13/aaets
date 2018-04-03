@@ -18,8 +18,22 @@
         color: white;
         padding-right: 30px;
     }
+    form#search_form-two{
+        display: flex;
+        justify-content: center;
+    }
     @media (max-width: 992px){
         .col-md-1.slash {
+            display: none;
+        }
+    }
+    @media(max-width: 486px){
+        .top-navbar{
+            display: none;
+        }
+    }
+    @media(min-width: 487px){
+        form#search_form-two{
             display: none;
         }
     }
@@ -28,7 +42,7 @@
 <div id="whole-nav">
     <div class="conatiner">
         <div class="row"> 
-            <div class="col-md-6">
+            <div class="col-md-6 blank-nav">
 
             </div>
             <div class="col-md-1 slash">
@@ -38,6 +52,14 @@
                 <h4><a  class="nav-links" href="/category/20087/menspolos.html">Mens Polos</a></h4>
                 <h4><a  class="nav-links" href="/category/20088/ladiespolos.html">Ladies Polos</a></h4>
                 <h4><a class="nav-links" href="/category/20089/allpolos.html">All Polos</a></h4>
+                <form id="search_form-two" action="/lsearch.jhtm" method="post">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="keywords" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
