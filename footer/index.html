@@ -10,7 +10,76 @@
     .bottom-nav p a{
         color: white;
     }
+    /* global elements */
+    #products_wrapper_24 .product_wrapper .product_quick_links{
+        display: none;
+    }
+    #products_wrapper_24 .product_wrapper .product_price_wrapper .price_title{
+        display: none;
+    }
+    #products_wrapper_24 .product_wrapper .product_price_wrapper .price_value{
+        color: #295f8e;
+    }
+    #products_wrapper_24 .product_wrapper{
+        border: none;
+        text-align: center;
+    }
+    #products_wrapper_24 .product_wrapper .product_name_wrapper .product_name a{
+        color: #295f8e;
+    }
+    .addToList_btn_wrapper, a.btn.addToQuote_btn, div#floating_pricingSummary {
+        display: none;
+    }
+    .accordion_box:nth-child(2), .accordion_box:nth-child(3) {
+        display:none;
+    } 
+    .addToCart_btn, .continueShopping_btn, .proceedCheckout_btn, .purchase_btn  {
+        background-image: none;
+        color: white;
+        background-color: #295f8e;
+        border-color: #295f8e;
+    }
+    .addToCart_btn:hover, .continueShopping_btn:hover, .proceedCheckout_btn:hover, .purchase_btn:hover{
+        background-image: none;
+        color: white;
+        background-color: #295f8e;
+        border-color: #295f8e;
+    }
+    .fa-plane:before, #product_details_15 .product_name_sku_wrapper .details_product_name h1{
+        color: #295f8e;
+        margin-bottom: 0;
+    }
+    .priceGridWrapper.table-responsive {
+        display: none;
+    }
+    .configBox_icon {
+        display: none;
+    }
+    #product_details_15 .details_desc .configBox_wrapper .configBox_title.has-icon h3{
+        margin-left: 0;
+    }
+    .price-only{
+        font-size: 22px;
+        color: #295f8e;
+    }
+
 </style>
 <div class="bottom-nav">
     <p><a href="/category/20121/returnsandexchanges.html">Return & Exchanges</a> <a href="http://overtureshop.com/aaets/CSC.PDF"> | Size Chart</a></p>
+    <p class="price-only">$23.75</p>
 </div>
+
+<script>
+    $(document).ready(function(){
+        if($('#product_details_15 .product_name_sku_wrapper .details_sku').length == true){
+            $('.price-only').appendTo('#product_details_15 .product_name_sku_wrapper .details_sku')
+        } else {
+            $('.price-only').css('display', 'none');
+        }
+    })
+
+    //    SOMETHING TO PREVENT UPDATING WITH NOTHING NEW 
+    // $('#total_price_value').html() == '' || '$0.00'{
+    //     ('.hidden-value').appendTo('addToCart_btn_wrapper')
+    // }
+</script>
