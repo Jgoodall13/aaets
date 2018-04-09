@@ -1,9 +1,46 @@
 <style>
+
+    @font-face {
+        font-family: america;
+        src: url('/assets/fonts/AmericanSans-Regular.ttf');
+    }
+    @font-face {
+        font-family: america-bold;
+        src: url('/assets/fonts/AmericanSans-Bold.ttf');
+        font-weight: bold;
+    }
+    @font-face {
+        font-family: america-italic;
+        src: url('/assets/fonts/AmericanSans-Italic.ttf');
+    }
+    *{
+        font-family: america;
+    }
+    h1, h2, h3, h4, h5, h6{
+        font-family: america;
+    }
+    h1.hero-text{
+        font-family: america-italic;
+    }
+    a.cta-polo{
+        font-family: america-italic;
+    }
+    .nav-links{
+        font-family: america;
+    }
+    .nav-links:hover{
+        font-family: america-bold;
+        color: white;
+    }
+    #aa-copy{
+        font-family: america-italic;
+    }
     #header{
-        background-color: #F5F5DC;
+        background-color: #efefef;
     }
     #title{
         color: #295f8e;
+        font-family: america;
     }
     .aa-header{
         padding: 0;
@@ -34,6 +71,13 @@
     .fa-shopping-cart:before{
         color: #337ab7;
         font-size: 2em;
+    }
+    .fa-search:before{
+        color: white;
+        font-size: 1.3em;
+    }
+    button.btn.btn_search {
+        background: gray;
     }
     @media(max-width: 992px){
         .top-navbar, .head-right, .go-home{
@@ -94,13 +138,29 @@
         width: 0%;
         left: 50%;
     }
+    .small-aa-stuff{
+        padding: 0;
+    }
+    #nav-for-mobile{
+        background-color: #b5b5b5;
+        text-align: center;
+        display: none;
+    }
+    .mobile-links{
+        border-bottom: 1px solid gray;
+        height: 35px;
+    }
+    #mens-mobile-links, #ladies-mobile-links, #all-mobile-links{
+        color: #545454;
+        font-size: 20px
+    }
     @media(max-width: 486px){
         #header{
             display: none;
         }
         .mobile-head{
             display: block;
-            background-color: #F5F5DC;
+            background-color: #efefef;
         }
         .go-home{
             display: flex;
@@ -122,9 +182,13 @@
         .cart-right{
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding-top: 5px;
-        }   
+            padding-top: 8px;
+        }
+    }
+    @media(min-width: 487px){
+        #nav-for-mobile{
+            display: none;
+        }
     }
 </style>
 
@@ -170,7 +234,7 @@
                     <span></span>
                 </div>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 small-aa-stuff">
                 <a href="/"><div class="go-home">
                     <h4 id="title">American Airlines</h4>
                     <img src="/assets/img/aaets/aa_bird.png" alt="eagle" class="eagle">
@@ -186,6 +250,26 @@
     </div>
 </div>
 
+<div id='nav-for-mobile'>
+    <div class="mobile-links">
+        <a id="mens-mobile-links" href="/category/20087/menspolos.html">Mens Polos</a>
+    </div>
+    <div class="mobile-links">
+        <a id="ladies-mobile-links" href="/category/20088/ladiespolos.html">Ladies Polos</a>
+    </div>
+    <div class='mobile-links'>
+        <a id="all-mobile-links" href="/category/20089/allpolos.html">All Polos</a>
+    </div>
+    <form id="search_form-two" action="/lsearch.jhtm" method="post">
+        <div class="input-group">
+            <input type="text" class="form-control" name="keywords" placeholder="Search...">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>
+</div>
+
 <script>
     $(document).ready(function(){
 	    $('#nav-icon3').click(function(){
@@ -193,15 +277,23 @@
 	    });
     });
     //This wil be the hamburger function
-        $(document).ready(function(){
+    //     $(document).ready(function(){    
+    //     $('#nav-icon3').click(function(){
+    //             $('.top-navbar').slideToggle('fast');
+    //             $('.top-navbar').css('background-color', '#cbcbcb')
+    //             $('.nav-links').css({
+    //                 'display': 'flex',
+    //                 'justify-content': 'center',
+    //                 'padding': 0	
+    //             })
+    //             $('a.nav-links').css('border-top', '1px solid #b5b5b5')
+    //             $('form#search_form-two').css('border-top', '1px solid #b5b5b5')
+    //     })
+    // })
+    $(document).ready(function(){    
         $('#nav-icon3').click(function(){
-                $('.top-navbar').slideToggle('slow');
-                $('.nav-links').css({
-                    'display': 'flex',
-                    'justify-content': 'center',
-                    'padding': 0	
-                })
-                $('#whole-nav').css('background-color', '#b30000')
+                $('#nav-for-mobile').slideToggle('slow');
+                $('.input-group').css('width', '250px')
         })
     })
 </script>
